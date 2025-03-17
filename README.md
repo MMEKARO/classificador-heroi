@@ -85,6 +85,8 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para m
 Como Contribuir
 Faça um fork do projeto.
 
+Disponível em: https://classificadordeheroi.netlify.app/
+
 Crie uma branch para sua feature (git checkout -b feature/nova-feature).
 
 Commit suas mudanças (git commit -m 'Adicionando nova feature').
