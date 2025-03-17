@@ -1,32 +1,51 @@
-# Classificador de Nível de Herói
+Classificador de Nível de Herói
 
-Este projeto contém implementações do desafio "Classificador de Nível de Herói" em **Python**, **Java**, **HTML + CSS + JS** e **.NET**.
+Este projeto é uma implementação do desafio "Classificador de Nível de Herói" utilizando HTML, CSS e JavaScript. Ele permite que os usuários insiram o nome e a experiência (XP) de um herói e classifiquem seu nível com base em uma tabela de níveis predefinida. O design é inspirado no universo de Star Wars, com efeitos visuais temáticos.
 
-## Como Executar
+Como Executar
+1. Execução Local
+Clone o repositório:
 
-### 1. Python
-- **Arquivo**: `python/classificador.py`
-- **Executar online**: [Google Colab](https://colab.research.google.com/)
-  1. Copie e cole o código no Google Colab.
-  2. Execute o código.
+bash
+Copy
+git clone https://github.com/MMEKARO/classificador-heroi.git
+Navegue até a pasta do projeto:
 
-### 2. Java
-- **Arquivo**: `java/ClassificadorHeroi.java`
-- **Executar online**: [JDoodle](https://www.jdoodle.com/)
-  1. Copie e cole o código no JDoodle.
-  2. Execute o código.
+bash
+Copy
+cd classificador-heroi/web
+Abra o arquivo index.html:
 
-### 3. HTML + CSS + JS
-- **Arquivos**: `web/index.html`, `web/style.css`, `web/script.js`
-- **Executar online**: [JSFiddle](https://jsfiddle.net/)
-  1. Copie e cole o código HTML, CSS e JS no JSFiddle.
-  2. Execute o código.
+Abra o arquivo index.html no seu navegador para visualizar o projeto.
 
-### 4. .NET
-- **Arquivo**: `dotnet/Program.cs`
-- **Executar online**: [.NET Fiddle](https://dotnetfiddle.net/)
-  1. Copie e cole o código no .NET Fiddle.
-  2. Execute o código.
+2. Execução Online (GitHub Pages)
+Faça o upload do projeto para o GitHub:
+
+Crie um repositório no GitHub e faça o upload dos arquivos.
+
+Ative o GitHub Pages:
+
+Vá até as configurações do repositório.
+
+Na seção Pages, selecione a branch main (ou master) e a pasta web como origem.
+
+Salve as alterações.
+
+Acesse o link gerado:
+
+Após alguns minutos, o GitHub Pages gerará um link para visualizar o projeto online.
+
+3. Testar Códigos em Outras Linguagens
+O projeto também permite testar códigos em Java, Python e .NET diretamente no navegador:
+
+Java: Clique no ícone do Java para abrir o código no JDoodle.
+
+Python: Clique no ícone do Python para abrir o código no OnlineGDB.
+
+.NET: Clique no ícone do .NET para abrir o código no .NET Fiddle.
+
+Estrutura do Projeto
+A estrutura do projeto é a seguinte:
 
 ## Estrutura do Projeto
 
@@ -48,4 +67,28 @@ classificador-heroi/
 │
 └── README.md
 
-https://github.com/MMEKARO/classificador-heroi.git
+Tecnologias Utilizadas
+HTML: Estrutura da página.
+
+CSS: Estilização e animações.
+
+JavaScript: Lógica de classificação e interatividade.
+
+Font Awesome: Ícones utilizados no projeto.
+
+Autor
+Marcelo Mekaro - GitHub
+
+Licença
+Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.
+
+Como Contribuir
+Faça um fork do projeto.
+
+Crie uma branch para sua feature (git checkout -b feature/nova-feature).
+
+Commit suas mudanças (git commit -m 'Adicionando nova feature').
+
+Push para a branch (git push origin feature/nova-feature).
+
+Abra um Pull Request.
