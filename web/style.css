@@ -1,0 +1,260 @@
+/* Paleta de cores inspirada em Star Wars */
+:root {
+    --cor-primaria: #FFD700;  /* Dourado */
+    --cor-secundaria: #000;  /* Preto */
+    --cor-fundo: #0a0a0a;  /* Fundo escuro */
+    --cor-texto: #fff;  /* Texto branco */
+    --cor-destaque: #00BFFF;  /* Azul claro */
+    --cor-borda: #444;  /* Cinza escuro */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Texto que desce verticalmente */
+.texto-descente {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Star Jedi', Arial, sans-serif;
+    font-size: 2em;
+    color: var(--cor-primaria);  /* Cor dourada */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Sombra para destacar o texto */
+    animation: descerTexto 10s linear infinite;
+    z-index: -1;  /* Coloca o texto atrás do conteúdo */
+    white-space: nowrap;
+    -webkit-text-stroke: 1px var(--cor-secundaria);  /* Borda preta ao redor das letras */
+}
+
+@keyframes descerTexto {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(15vh); }  /* Desce até 15% da altura da tela */
+}
+
+.container {
+    background-color: var(--cor-secundaria);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    margin-top: 100px;  /* Espaço para o texto que desce */
+}
+
+h1, h2, h3 {
+    color: var(--cor-primaria);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+.heroi {
+    margin-bottom: 30px;
+}
+
+.heroi form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.heroi input {
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    font-size: 1em;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.heroi button {
+    padding: 12px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.heroi button:hover {
+    background-color: var(--cor-destaque);
+}
+
+#resultado {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: var(--cor-destaque);
+    font-weight: bold;
+}
+
+#tabela {
+    margin-top: 20px;
+    text-align: left;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid var(--cor-borda);
+    text-align: center;
+    color: var(--cor-texto);
+}
+
+th {
+    background-color: var(--cor-fundo);
+    font-weight: bold;
+}
+
+.carrossel {
+    margin: 30px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.carrossel-container {
+    display: inline-block;
+    animation: carrossel 20s linear infinite;
+}
+
+.carrossel img {
+    width: 80px;
+    height: 80px;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.carrossel img:hover {
+    transform: scale(1.1);
+}
+
+@keyframes carrossel {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.testar-linguagens {
+    margin-top: 30px;
+}
+
+.linguagem-container {
+    margin-bottom: 20px;
+}
+
+.linguagem-container h3 {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--cor-primaria);
+}
+
+.codigo-texto {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    resize: none;
+    display: none;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.codigo-texto.visible {
+    display: block;
+}
+
+.contato {
+    margin-top: 30px;
+}
+
+.contato-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.contato-buttons a {
+    padding: 10px 15px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border-radius: 6px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.contato-buttons a:hover {
+    background-color: var(--cor-destaque);
+}
+
+.creditos {
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: var(--cor-primaria);
+}
+
+/* Botão para subir ao topo */
+#btnTopo {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+#btnTopo:hover {
+    background-color: var(--cor-destaque);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .carrossel img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .contato-buttons {
+        flex-direction: column;
+    }
+
+    .contato-buttons a {
+        width: 100%;
+        justify-content: center;
+    }
+}

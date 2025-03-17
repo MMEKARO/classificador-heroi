@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">  <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Configura a viewport para responsividade -->
+    <title>Classificador de Nível de Herói</title>  <!-- Título da página -->
+    <link rel="stylesheet" href="style.css">  <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  <!-- Link para ícones do Font Awesome -->
+</head>
+<body>
+    <!-- Botão para subir ao topo -->
+    <button id="btnTopo" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Texto que desce verticalmente -->
+    <div class="texto-descente">
+        <p>Classificador de Nível de Herói</p>
+    </div>
+
+    <div class="container">  <!-- Container principal -->
+        <!-- Seção da Atividade do Herói -->
+        <section class="heroi">
+            <div class="header-heroi">
+                <i class="fas fa-star decoracao-esquerda"></i>  <!-- Ícone de estrela à esquerda -->
+                <h1>Classificador de Nível de Herói</h1>
+                <i class="fas fa-star decoracao-direita"></i>  <!-- Ícone de estrela à direita -->
+            </div>
+            <form id="heroForm">
+                <label for="nome">Nome do Herói:</label>
+                <input type="text" id="nome" required>
+                <label for="xp">Experiência (XP): <i class="fas fa-star"></i></label>  <!-- Ícone de estrela -->
+                <input type="number" id="xp" required>
+                <button type="submit">Classificar</button>
+                <button type="button" onclick="novaConsulta()">Nova Consulta</button>  <!-- Botão de nova consulta -->
+            </form>
+            <div id="resultado"></div>  <!-- Resultado da classificação -->
+            <div id="tabela"></div>  <!-- Tabela de níveis -->
+        </section>
+
+        <!-- Carrossel de logos das linguagens -->
+        <section class="carrossel">
+            <div class="carrossel-container">
+                <a href="https://www.jdoodle.com/online-java-compiler" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java Logo" class="carrossel-img">
+                </a>
+                <a href="https://www.onlinegdb.com/online_python_compiler" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python Logo" class="carrossel-img">
+                </a>
+                <a href="https://dotnetfiddle.net/" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6132/6132221.png" alt=".NET Logo" class="carrossel-img">
+                </a>
+            </div>
+        </section>
+
+        <!-- Seção para testar códigos em outras linguagens -->
+        <section class="testar-linguagens">
+            <h2>Testar em Outras Linguagens</h2>
+            <div class="linguagem-container">
+                <h3 onclick="toggleCodigo('codigoJava')">Java <i class="fas fa-chevron-down"></i></h3>
+                <textarea id="codigoJava" class="codigo-texto" readonly>
+import java.util.Scanner;  // Importa a classe Scanner para leitura de entrada
+
+public class ClassificadorHeroi {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);  // Cria um objeto Scanner para ler entradas
+
+        // Entrada de dados
+        System.out.print("Digite o nome do herói: ");  // Solicita o nome do herói
+        String nomeHeroi = scanner.nextLine();  // Lê o nome do herói
+
+        System.out.print("Digite a quantidade de experiência (XP) do herói: ");  // Solicita o XP do herói
+        int xpHeroi = scanner.nextInt();  // Lê o XP do herói
+
+        // Classificação do nível
+        String nivel = classificarHeroi(xpHeroi);  // Chama a função para classificar o nível
+
+        // Saída
+        System.out.println("\nO Herói de nome " + nomeHeroi + " está no nível de " + nivel);  // Exibe o resultado
+
+        // Exibir tabela de níveis
+        exibirTabelaNiveis();  // Chama a função para exibir a tabela
+
+        // Créditos
+        System.out.println("\nDesenvolvido por Marcelo Mekaro 2025");  // Mensagem de créditos
+    }
+
+    // Função para classificar o nível do herói
+    public static String classificarHeroi(int xp) {
+        if (xp < 1000) return "Ferro";  // Nível Ferro para XP menor que 1000
+        else if (xp <= 2000) return "Bronze";  // Nível Bronze para XP entre 1001 e 2000
+        else if (xp <= 5000) return "Prata";  // Nível Prata para XP entre 2001 e 5000
+        else if (xp <= 7000) return "Ouro";  // Nível Ouro para XP entre 5001 e 7000
+        else if (xp <= 8000) return "Platina";  // Nível Platina para XP entre 7001 e 8000
+        else if (xp <= 9000) return "Ascendente";  // Nível Ascendente para XP entre 8001 e 9000
+        else if (xp <= 10000) return "Imortal";  // Nível Imortal para XP entre 9001 e 10000
+        else return "Radiante";  // Nível Radiante para XP maior que 10001
+    }
+
+    // Função para exibir a tabela de níveis
+    public static void exibirTabelaNiveis() {
+        System.out.println("\nTabela de Níveis de Herói:");
+        System.out.println("+------------+------------+-------------+");
+        System.out.println("| XP Mínimo  | XP Máximo  | Nível       |");
+        System.out.println("+------------+------------+-------------+");
+        System.out.println("| 0          | 1000       | Ferro       |");
+        System.out.println("| 1001       | 2000       | Bronze      |");
+        System.out.println("| 2001       | 5000       | Prata       |");
+        System.out.println("| 5001       | 7000       | Ouro        |");
+        System.out.println("| 7001       | 8000       | Platina     |");
+        System.out.println("| 8001       | 9000       | Ascendente  |");
+        System.out.println("| 9001       | 10000      | Imortal     |");
+        System.out.println("| 10001      | ∞          | Radiante    |");
+        System.out.println("+------------+------------+-------------+");
+    }
+}
+                </textarea>
+                <button onclick="abrirJava()">Abrir no JDoodle</button>
+            </div>
+            <div class="linguagem-container">
+                <h3 onclick="toggleCodigo('codigoPython')">Python <i class="fas fa-chevron-down"></i></h3>
+                <textarea id="codigoPython" class="codigo-texto" readonly>
+# Função para classificar o nível do herói com base na experiência (XP)
+def classificar_heroi(nome, xp):
+    """
+    Classifica o nível do herói com base na quantidade de experiência (XP).
+    :param nome: Nome do herói (string)
+    :param xp: Quantidade de experiência (int)
+    :return: Nível do herói (string)
+    """
+    # Estrutura condicional para determinar o nível com base no XP
+    if xp < 1000:
+        nivel = "Ferro"  # Nível Ferro para XP menor que 1000
+    elif 1001 <= xp <= 2000:
+        nivel = "Bronze"  # Nível Bronze para XP entre 1001 e 2000
+    elif 2001 <= xp <= 5000:
+        nivel = "Prata"  # Nível Prata para XP entre 2001 e 5000
+    elif 5001 <= xp <= 7000:
+        nivel = "Ouro"  # Nível Ouro para XP entre 5001 e 7000
+    elif 7001 <= xp <= 8000:
+        nivel = "Platina"  # Nível Platina para XP entre 7001 e 8000
+    elif 8001 <= xp <= 9000:
+        nivel = "Ascendente"  # Nível Ascendente para XP entre 8001 e 9000
+    elif 9001 <= xp <= 10000:
+        nivel = "Imortal"  # Nível Imortal para XP entre 9001 e 10000
+    else:
+        nivel = "Radiante"  # Nível Radiante para XP maior que 10001
+    return nivel  # Retorna o nível do herói
+
+# Função para exibir a tabela de níveis
+def exibir_tabela_niveis():
+    """
+    Exibe uma tabela com os níveis de herói e os intervalos de XP correspondentes.
+    """
+    print("\nTabela de Níveis de Herói:")
+    print("+------------+------------+-------------+")
+    print("| XP Mínimo  | XP Máximo  | Nível       |")
+    print("+------------+------------+-------------+")
+    # Lista de tuplas com os intervalos de XP e níveis correspondentes
+    niveis = [
+        (0, 1000, "Ferro"),
+        (1001, 2000, "Bronze"),
+        (2001, 5000, "Prata"),
+        (5001, 7000, "Ouro"),
+        (7001, 8000, "Platina"),
+        (8001, 9000, "Ascendente"),
+        (9001, 10000, "Imortal"),
+        (10001, float('inf'), "Radiante")
+    ]
+    # Loop para exibir cada linha da tabela
+    for min_xp, max_xp, nivel in niveis:
+        print(f"| {min_xp:<10} | {max_xp:<10} | {nivel:<11} |")
+    print("+------------+------------+-------------+")
+
+# Entrada de dados
+nome_heroi = input("Digite o nome do herói: ")  # Solicita o nome do herói
+xp_heroi = int(input("Digite a quantidade de experiência (XP) do herói: "))  # Solicita o XP do herói
+
+# Classificação e saída
+nivel_heroi = classificar_heroi(nome_heroi, xp_heroi)  # Chama a função para classificar o nível
+print(f"\nO Herói de nome {nome_heroi} está no nível de {nivel_heroi}")  # Exibe o resultado
+
+# Exibir tabela de níveis
+exibir_tabela_niveis()  # Chama a função para exibir a tabela
+
+# Créditos
+print("\nDesenvolvido por Marcelo Mekaro 2025")  # Mensagem de créditos
+
+                </textarea>
+                <button onclick="abrirPython()">Abrir no OnlineGDB</button>
+            </div>
+            <div class="linguagem-container">
+                <h3 onclick="toggleCodigo('codigoDotNet')">.NET <i class="fas fa-chevron-down"></i></h3>
+                <textarea id="codigoDotNet" class="codigo-texto" readonly>
+using System;  // Importa o namespace System para usar funções básicas
+
+class Program
+{
+    static void Main()
+    {
+        // Entrada de dados
+        Console.Write("Digite o nome do herói: ");  // Solicita o nome do herói
+        string nomeHeroi = Console.ReadLine();  // Lê o nome do herói
+
+        Console.Write("Digite a quantidade de experiência (XP) do herói: ");  // Solicita o XP do herói
+        int xpHeroi = int.Parse(Console.ReadLine());  // Lê o XP do herói
+
+        // Classificação do nível
+        string nivel = ClassificarHeroi(xpHeroi);  // Chama a função para classificar o nível
+
+        // Saída
+        Console.WriteLine($"\nO Herói de nome {nomeHeroi} está no nível de {nivel}");  // Exibe o resultado
+
+        // Exibir tabela de níveis
+        ExibirTabelaNiveis();  // Chama a função para exibir a tabela
+
+        // Créditos
+        Console.WriteLine("\nDesenvolvido por Marcelo Mekaro 2025");  // Mensagem de créditos
+    }
+
+    // Função para classificar o nível do herói
+    static string ClassificarHeroi(int xp)
+    {
+        if (xp < 1000) return "Ferro";  // Nível Ferro para XP menor que 1000
+        else if (xp <= 2000) return "Bronze";  // Nível Bronze para XP entre 1001 e 2000
+        else if (xp <= 5000) return "Prata";  // Nível Prata para XP entre 2001 e 5000
+        else if (xp <= 7000) return "Ouro";  // Nível Ouro para XP entre 5001 e 7000
+        else if (xp <= 8000) return "Platina";  // Nível Platina para XP entre 7001 e 8000
+        else if (xp <= 9000) return "Ascendente";  // Nível Ascendente para XP entre 8001 e 9000
+        else if (xp <= 10000) return "Imortal";  // Nível Imortal para XP entre 9001 e 10000
+        else return "Radiante";  // Nível Radiante para XP maior que 10001
+    }
+
+    // Função para exibir a tabela de níveis
+    static void ExibirTabelaNiveis()
+    {
+        Console.WriteLine("\nTabela de Níveis de Herói:");
+        Console.WriteLine("+------------+------------+-------------+");
+        Console.WriteLine("| XP Mínimo  | XP Máximo  | Nível       |");
+        Console.WriteLine("+------------+------------+-------------+");
+        Console.WriteLine("| 0          | 1000       | Ferro       |");
+        Console.WriteLine("| 1001       | 2000       | Bronze      |");
+        Console.WriteLine("| 2001       | 5000       | Prata       |");
+        Console.WriteLine("| 5001       | 7000       | Ouro        |");
+        Console.WriteLine("| 7001       | 8000       | Platina     |");
+        Console.WriteLine("| 8001       | 9000       | Ascendente  |");
+        Console.WriteLine("| 9001       | 10000      | Imortal     |");
+        Console.WriteLine("| 10001      | ∞          | Radiante    |");
+        Console.WriteLine("+------------+------------+-------------+");
+    }
+}
+                </textarea>
+                <button onclick="abrirDotNet()">Abrir no .NET Fiddle</button>
+            </div>
+        </section>
+
+        <!-- Seção de contato -->
+        <section class="contato">
+            <h2>Entre em Contato</h2>
+            <div class="contato-buttons">
+                <a href="https://wa.me/5519999650436" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="mailto:uticoder@gmail.com"><i class="fas fa-envelope"></i> E-mail</a>
+                <a href="https://github.com/MMEKARO" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.instagram.com/uti.coder" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.tiktok.com/@uti.coder" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+                <a href="https://www.youtube.com/@UTICoder" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+            </div>
+        </section>
+
+        <!-- Créditos -->
+        <footer class="creditos">
+            <p>Desenvolvido por Marcelo Mekaro 2025</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>  <!-- Link para o arquivo JavaScript -->
+</body>
+</html>
